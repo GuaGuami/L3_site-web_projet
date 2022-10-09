@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Numeric - Etudes statistiques</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body class="formulercor" id="page-top">
+
+        <!-- Navigation-->
+        <nav class="test" id="bar">
+            <img src="assets/img/logo-blue.gif" class="img-small">
+            <!--NOM-->
+            <a class="navbar-brand" href="accueil.html" id="black"><h1>Numeric</h1></a>
+
+            <!--MENU-->
+            <ul class="dropdown">
+                    <li class="nav-li dropbtn"><a href="accueil.html" class="boite">Accueil</a>
+                        <div class="dropdown-content">
+                            <a href="accueil.html#nous" class="text-white">Qui nous sommes</a>
+                            <a href="accueil.html#team" class="text-white">Rencontrez notre TEAM</a>
+                            <a href="accueil.html#contact" class="text-white">Contact</a>
+                        </div>
+                    </li>
+                    <li class="nav-li dropbtn"><a href="thematiques.html" class="boite">Thématiques</a>
+                        <div class="dropdown-content">
+                            <a href="disparite.html" class="text-white">Disparité Homme/Femme</a>
+                            <a href="femme.html" class="text-white">Zoom sur les femmes</a>
+                            <a href="chomage.html" class="text-white">Chômage</a>
+                            <a href="salaire.html" class="text-white">Salaire</a>
+                            <a href="ut1.html" class="text-white">Zoom sur UT1</a>
+                        </div>
+                    </li>
+                    <li class="nav-li"><a href="" class="boite">Enquête</a></li>
+                    <li class="nav-li iconHand"><i class="fa fa-search fa-lg" id="search" onclick="return show(fen);"></i></li>
+            </ul>
+        </nav>
+      
+        <!--MENU CACHE-->
+       <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="accueil.html"><h1 id="black">Numeric</h1></a></li>
+                <li class="sidebar-nav-item"><a class="text menu-cacher" href="accueil.html#page-top">Accueil</a>
+                </li>
+                
+                <li class="sidebar-nav-item"><a class="text" href="thematiques.html">Thématiques</a>
+                    <div class="sous-menu">
+                        <a href="disparite.html">Disparité Homme/Femme</a>
+                        <a href="femme.html">Zoom sur les femmes</a>
+                        <a href="chomage.html">Chômage</a>
+                        <a href="salaire.html">Salaire</a>
+                        <a href="ut1.html">Zoom sur UT1</a>
+                    </div>
+                </li>
+                <li class="sidebar-nav-item"><a class="text" href="">Enquête</a></li>
+                <li class="sidebar-nav-item"><i class="fa fa-search fa-lg iconHand placerechecher" id="search" onclick="return show(fen);"></i></li>
+            </ul>
+        </nav>
+
+
+<!--Fenêtre-->
+        <div id="fen" class="fen">
+            <div class="fen-content">
+                            
+                <span id ="closeBtn" class="closeBtn" onclick="return clo(fen)" >×</span>
+                            
+                <div class="fen-body">
+                    <form class="reche">
+                        <input type="search" placeholder="ENTRER LES TERMES A RECHERCHER" name="input-fen">
+                        <br>
+                        <input type="button" name="rechecher" id="rechecher" value="RECHERCHER" class="reche-Btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <header class="bar-enquete d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1 text-white rouge opacity-50">Enquête</h1>
+            </div>
+        </header>
+        
+
+ <div class="placeformule">
+       <!--formule-->
+     
+            
+               <form method="post" action="confirmation.html"> 
+                
+                    <input type="text"  class="formulerleft "  name="lastName" id="nom" placeholder="Votre nom*" title="Commencez par une lettre majuscule, puis continuez avec les lettres minuscules" pattern="[A-Z]{1}[a-z]{1,}" required>
+                    <input type="text" class="formuleright" name="firstName" id="prenom" placeholder="Votre prénom*" title="Commencez par une lettre majuscule, puis continuez avec les lettres minuscules" pattern="[A-Z]{1}[a-z]{1,}" required/>
+                    
+
+                    <select class="formulerleft" name="sexe" id="genre" required>
+                    <option>Mme</option>
+                    <option>M.</option></select>
+                    <input type="number" class="formuleright" placeholder="Votre dernière année d'études" name="year" id="annee" min="1922" required/>
+
+
+                    <input type="tel" class="formulerleft"  name="numTel" id="phone" placeholder="Votre numéro de téléphone" title="Votre numéro de téléphone doit contenir 10 chiffres" pattern="[0-9]{10}"/>
+                     <input type="email" class="formuleright" name="Mail" id="email" placeholder="Votre adresse mail" pattern="[a-z0-9._]+@[a-z.-]{3,15}+\.[a-z]{2,3}" title="Les types d'e-mail entre 3 à 15 caractères sont acceptés. Par exemple : yahoo, gmail, icloud, outlook"/>
+
+                     
+                      <input type="number" class="formulerleft" placeholder="Votre nombre de réponses*" title="Combien de réponses avez-vous eues lorsque vous avez déposé une candidature à un poste convoité ?" name="nb" id="nbRep" min="0" required/>  
+                      <input type="number" class="formuleright" placeholder="Votre salaire*" title="Renseignez le premier montant de votre salaire annuel brut en euro" name="salaire" id="salary" min="10" required/>
+
+                    <span class="formulerleft">Votre université*</span>
+                    <input type="text" class="formulerchoix" name="univ" id="fac" placeholder="Ex: UT1"  title="Saisissez le nom de votre université sans espace" pattern="[a-zA-Z0-9._]{1,}" required>
+
+                    <span class="formulerleft">Votre domaine*</span>
+                    <select name="domaine" class="formulerchoix" title="Choisissez votre domaine de spécialisation durant vos dernières années d'études" id="spe" required>
+                            <option>Droit, économie et gestion</option>
+                            <option>Sciences humaines et sociales</option>
+                            <option>Lettres, langues, arts</option>
+                            <option>Sciences, technologies et santé</option>
+                            <option>Master enseignement</option>
+                            <option>Autres</option>
+                    </select>
+                    
+                    <span class="formulerleft">Votre situation*</span>
+                    <select name="situation" title="Après obtention du diplôme, au bout de combien de temps avez-vous trouvé un travail ?" class="formulerchoix" id="situ" required>
+                            <option>18 mois après le diplôme</option>
+                            <option>30 mois après le diplôme</option>
+                    </select>
+
+                     <!--une linge-->
+
+                     <label class="formulertitre">Votre type de contrat*</label>
+                        <span class="formulerradio">CDI <input  type="radio" name="contrat" id="CDI" value="cdi" checked>      CDD <input type="radio" name="contrat" id="CDD" value="cdd">      Interim <input type="radio" name="contrat" id="Interim" value="interim"></span>
+
+                       
+                       <label class="formulertitre grand">Votre type d'entreprise*</label>
+                        <span class="formulerradio grand"> Public <input type="radio" name="etp" id="public" value="etpPublic" checked>      Privé <input type="radio" name="etp" id="prive" value="etpPrive"></span> 
+
+                    
+                        <textarea name="commentaire" class="formulercom grand" id="comments" rows="5" cols="23" placeholder="Commentaires" id="comment"></textarea>
+                        
+
+                        <span class="formulercondi">
+                            <input type="checkbox" class="" name="conditions" id="offrePromo" value="offres" checked required> Je souhaite m'abonner à la newsletter de Numeric*<br>
+                            <input type="checkbox"  name="conditions2" id="conditionGe" value="général" required> J'ai lu et approuvé l'utilisation de mes données par Numeric*
+                        </span>
+                    
+                        <input type="text" class="formulerleft formuler-cap" name="capchaUser" id="userID" pattern="[A-Z]{3}[0-9]{3}" placeholder="Captcha*" title="Le captcha est composé de 3 lettres majuscules suivies de 3 chiffres" required> 
+                        <input type="text" class="formuleright formuler-cap" name="captchaRobot" id="captchaID" value="ZZZ987" readonly>
+
+                        
+                        <input type="submit" class="formulerbtnr" name="soumettre" id="soumettre" value="ENVOI" onClick="return confirm('Êtes-vous sûr de vouloir soumettre cette enquête ?') && testCaptcha(userID,captchaID) && comparaisonAnnee(annee);">
+                        <input type="reset" class="formulerbtnl" name="refaire" id="refaire" value="RESET" onClick="return confirm('Êtes-vous sûr de vouloir tout effacer ?') && resetRouge(userID);">
+                  
+            </form>
+        </div>
+
+
+
+<section class="content-section text-white text-center " id="services">
+</section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+         
+            <div class="content-section-heading">
+                <h2 class="mb-5">Contact</h2>
+            </div>
+
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="tel:123456789" target="_blank"><i class="icon-screen-smartphone"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" target="_blank" href="mailto:moi@tel.com"><i class="fa fa-envelope"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://fr-fr.facebook.com/" target="_blank"><i class="icon-social-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/" target="_blank"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="https://www.instagram.com/" target="_blank"><i class="icon-social-instagram"></i></a>
+                    </li>
+                </ul>
+            <p class="text-muted small mb-0">Copyright 2022 &copy; Designed by TANG & RAVELOJAONA</p>
+            </div>
+          
+        </footer>
+
+
+
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

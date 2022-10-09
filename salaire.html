@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Numeric - Etudes statistiques</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Load plotly.js into the DOM -->
+        <script src='https://cdn.plot.ly/plotly-2.9.0.min.js'></script>
+        <!--Animate.CSS-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body id="page-top" class="gris" onload="hide3(salMeanDom,sal_compa,salMoyen);">
+
+        <!-- Navigation-->
+        <nav class="test" id="bar">
+            <img src="assets/img/logo-blue.gif" class="img-small">
+            <!--NOM-->
+            <a class="navbar-brand" href="accueil.html" id="black"><h1>Numeric</h1></a>
+
+            <!--MENU-->
+            <ul class="dropdown">
+                    <li class="nav-li dropbtn"><a href="accueil.html" class="boite">Accueil</a>
+                        <div class="dropdown-content">
+                            <a href="accueil.html#nous" class="text-white">Qui nous sommes</a>
+                            <a href="accueil.html#team" class="text-white">Rencontrez notre TEAM</a>
+                            <a href="accueil.html#contact" class="text-white">Contact</a>
+                        </div>
+                    </li>
+                    <li class="nav-li dropbtn"><a href="thematiques.html" class="boite">Thématiques</a>
+                        <div class="dropdown-content">
+                            <a href="disparite.html" class="text-white">Disparité Homme/Femme</a>
+                            <a href="femme.html" class="text-white">Zoom sur les femmes</a>
+                            <a href="chomage.html" class="text-white">Chômage</a>
+                            <a href="" class="text-white">Salaire</a>
+                            <a href="ut1.html" class="text-white">Zoom sur UT1</a>
+                        </div>
+                    </li>
+                    <li class="nav-li"><a href="enquete.html" class="boite">Enquête</a></li>
+                    <li class="nav-li iconHand"><i class="fa fa-search fa-lg" id="search" onclick="return show(fen);"></i></li>
+            </ul>
+        </nav>
+      
+        <!--MENU CACHE-->
+       <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="accueil.html"><h1 id="black">Numeric</h1></a></li>
+                <li class="sidebar-nav-item"><a class="text menu-cacher" href="accueil.html#page-top">Accueil</a>
+                </li>
+                
+                <li class="sidebar-nav-item"><a class="text" href="thematiques.html">Thématiques</a>
+                    <div class="sous-menu">
+                        <a href="disparite.html">Disparité Homme/Femme</a>
+                        <a href="femme.html">Zoom sur les femmes</a>
+                        <a href="chomage.html">Chômage</a>
+                        <a href="">Salaire</a>
+                        <a href="ut1.html">Zoom sur UT1</a>
+                    </div>
+                </li>
+                <li class="sidebar-nav-item"><a class="text" href="enquete.html">Enquête</a></li>
+                <li class="sidebar-nav-item"><i class="fa fa-search fa-lg iconHand placerechecher" id="search" onclick="return show(fen);"></i></li>
+            </ul>
+        </nav>
+        
+
+<!--Fenêtre-->
+        <div id="fen" class="fen">
+            <div class="fen-content">
+                            
+                <span id ="closeBtn" class="closeBtn" onclick="return clo(fen)" >×</span>
+                            
+                <div class="fen-body">
+                    <form class="reche">
+                        <input type="search" placeholder="ENTRER LES TERMES A RECHERCHER" name="input-fen">
+                        <br>
+                        <input type="button" name="rechecher" id="rechecher" value="RECHERCHER" class="reche-Btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+       <!-- Header-->
+        <header class="bar-salaire text-white">
+            <br><br>
+                <h1 class="text-center mt-md-5 pb-5 animate__animated animate__rubberBand">Salaire</h1>
+        </header>
+
+       <div>
+
+            <div id="indicateur1" class="">
+
+
+                <div class="sal">
+
+                    <div>
+                        <input type="button" id="a-sal" class="choix-tb-graph gris" value="Tableau" onClick="return showTableS1(salMeanDom,sal1);">
+                        <input type="button" id="a-sal" class="choix-tb-graph gris" value="Graphique" onClick="return showGraphS1(salMeanDom,sal1);">
+                    </div>
+
+                    <div class="contenu-salaire">
+
+                        <div class="image-salaire">
+                            <div id='salMeanDom'><!-- Plotly chart will be drawn inside this DIV --></div>
+                            <div id="sal1" style="height: 100%"></div>
+                             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+                        </div>
+
+                        <div class="texte-salaire">
+                            <p>Les étudiants peuvent utiliser ces chiffres comme référence dans leur choix de Master. Préferer un domaine dont le salaire moyen est élevé (Sciences, technologies et santé : 31 290€ en 2018) ou bien vers un domaine de préférence avec un faible salaire moyen (Lettres, langues et arts : 26 088€ en 2018) ?  </p>
+                        </div>      
+                    </div>
+                </div>
+
+
+                <div class="indic-salaire">
+                    <p>Salaire moyen en fonction du domaine</p>
+                </div>
+
+            </div>
+
+            <div id="indicateur2" class="my-5">
+
+
+                <div class="sal">
+
+                    <div>
+                        <input type="button" id="a-sal" class="choix-tb-graph gris" value="Tableau" onclick="return showTableS2(compSalMeanMed,sal_compa);">
+                        <input type="button" id="a-sal" class="choix-tb-graph gris" value="Graphique" onclick="return showGraphS2(compSalMeanMed,sal_compa);">
+                    </div>
+
+                    <div class="contenu-salaire">
+
+                        <div class="image2-salaire">
+                            <div id='compSalMeanMed'></div>
+                            <div id="sal_compa" style="height: 130%"></div>
+                        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+
+                        </div>
+
+                        <div class="texte2-salaire">
+                            <p>Simulation en vue ! Nous vous proposons de simuler votre salaire afin de savoir si vous êtes dans la moyenne ou non, si vous gagnez plus que 50% des Français ou non. </p>
+                        </div>
+
+                        <div class="simul-salaire">
+                            <input type="text" id="userAnnee" placeholder="Année" class="min" title="Saisissez une année entre 2011 et 2018"></input>
+                            <input type="text" id="userSalaire" placeholder="Salaire" class="min" title="Saisissez votre salaire de l'année saisi auparavant"></input>   
+                            <input type="button" id="bt" value="Simulation" onClick="return simulation(userAnnee,userSalaire);"></input>
+                        </div>    
+                    </div>
+                </div>
+
+
+                <div class="indic-salaire">
+                    <p>Comparaison du salaire moyen et du salaire médian</p>
+                </div>
+
+            </div>
+
+            <div id="indicateur3" class="my-5">
+
+
+                <div class="sal">
+
+                    <div>
+                        <input type="button" id="a-sal" class="choix-tb-graph gris" value="Tableau" onclick="return showTableS3(evolutionSalMean,salMoyen);">
+                        <input type="button" id="a-sal" class="choix-tb-graph gris" value="Graphique" onclick="return showGraphS3(evolutionSalMean,salMoyen);">
+                    </div>
+
+                    <div class="contenu-salaire">
+
+                        <div class="image-salaire">
+                            <div id='evolutionSalMean'></div>
+                            <div id='salMoyen'></div>
+                        </div>
+
+                        <div class="texte-salaire">
+                            <p>Le salaire français a connu des hauts et des bas. En effet, même s'il a baissé à cause des périodes de crises, le salaire n'a fait que croître au cours du temps. Cela est surtout dû à la montée du capitalisme dans notre société.</p>
+                        </div>      
+                    </div>
+                </div>
+
+
+                <div class="indic-salaire">
+                    <p>Evolution des salaires dans le temps</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<section class="content-section text-white text-center" id="services">
+</section>
+<br>
+        <!-- Footer-->
+        <footer class="footer text-center" id="footer-salaire">
+         
+            <div class="content-section-heading">
+                <h2 class="mb-5">Contact</h2>
+            </div>
+
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="tel:123456789" target="_blank"><i class="icon-screen-smartphone"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" target="_blank" href="mailto:moi@tel.com"><i class="fa fa-envelope"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://fr-fr.facebook.com/" target="_blank"><i class="icon-social-facebook"></i></a>
+                    </li>
+                     <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/" target="_blank"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="https://www.instagram.com/" target="_blank"><i class="icon-social-instagram"></i></a>
+                    </li>
+                </ul>
+            <p class="text-muted small mb-0">Copyright 2022 &copy; Designed by TANG & RAVELOJAONA</p>
+            </div>
+          
+        </footer>
+
+
+
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/salaire-graph.js"></script>
+        <script src="js/salaire-graph2.js"></script>
+        <script src="js/salaire-graph3.js"></script>
+        <script src="js/salaire-tb.js"></script>
+        <script src="js/salaire-tb2.js"></script>
+        <script src="js/salaire-tb3.js"></script>
+    </body>
+</html>

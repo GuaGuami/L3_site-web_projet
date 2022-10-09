@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Numeric - Etudes statistiques</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+         <!-- Load plotly.js into the DOM -->
+        <script src='https://cdn.plot.ly/plotly-2.9.0.min.js'></script>
+        <!--Animate.CSS-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body class= "bgcho"id="page-top">
+
+        <!-- Navigation-->
+        
+        <nav class="test" id="bar">
+            <img src="assets/img/logo-blue.gif" class="img-small">
+            <!--NOM-->
+            <a class="navbar-brand" href="accueil.html" id="black"><h1>Numeric</h1></a>
+
+            <!--MENU-->
+            <ul class="dropdown">
+                    <li class="nav-li dropbtn"><a href="accueil.html" class="boite">Accueil</a>
+                        <div class="dropdown-content">
+                            <a href="accueil.html#nous" class="text-white">Qui nous sommes</a>
+                            <a href="accueil.html#team" class="text-white">Rencontrez notre TEAM</a>
+                            <a href="accueil.html#contact" class="text-white">Contact</a>
+                        </div>
+                    </li>
+                    <li class="nav-li dropbtn"><a href="thematiques.html" class="boite">Thématiques</a>
+                        <div class="dropdown-content">
+                            <a href="disparite.html" class="text-white">Disparité Homme/Femme</a>
+                            <a href="femme.html" class="text-white">Zoom sur les femmes</a>
+                            <a href="" class="text-white">Chômage</a>
+                            <a href="salaire.html" class="text-white">Salaire</a>
+                            <a href="ut1.html" class="text-white">Zoom sur UT1</a>
+                        </div>
+                    </li>
+                    <li class="nav-li"><a href="enquete.html" class="boite">Enquête</a></li>
+                    <li class="nav-li iconHand"><i class="fa fa-search fa-lg" id="search" onclick="return show(fen);"></i></li>
+            </ul>
+        </nav>
+      
+        <!--MENU CACHE-->
+       <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="accueil.html"><h1 id="black">Numeric</h1></a></li>
+                <li class="sidebar-nav-item"><a class="text menu-cacher" href="accueil.html#page-top">Accueil</a>
+                </li>
+                
+                <li class="sidebar-nav-item"><a class="text" href="thematiques.html">Thématiques</a>
+                    <div class="sous-menu">
+                        <a href="disparite.html">Disparité Homme/Femme</a>
+                        <a href="femme.html">Zoom sur les femmes</a>
+                        <a href="">Chômage</a>
+                        <a href="salaire.html">Salaire</a>
+                        <a href="ut1.html">Zoom sur UT1</a>
+                    </div>
+                </li>
+                <li class="sidebar-nav-item"><a class="text" href="enquete.html">Enquête</a></li>
+                <li class="sidebar-nav-item"><i class="fa fa-search fa-lg iconHand placerechecher" id="search" onclick="return show(fen);"></i></li>
+            </ul>
+        </nav>
+
+
+<!--Fenêtre-->
+        <div id="fen" class="fen">
+            <div class="fen-content">
+                            
+                <span id ="closeBtn" class="closeBtn" onclick="return clo(fen)" >×</span>
+                            
+                <div class="fen-body">
+                    <form class="reche">
+                        <input type="search" placeholder="ENTRER LES TERMES A RECHERCHER" name="input-fen">
+                        <br>
+                        <input type="button" name="rechecher" id="rechecher" value="RECHERCHER" class="reche-Btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+          <!--chomage-->
+        <header class="bar-chômage text-white">
+            <br><br>
+                <h1 class="text-center mt-md-5 pb-5 animate__animated animate__backInDown">Chômage</h1>
+                
+       </header>
+
+        
+
+        <div class="bg_transp"></div>
+        <h1 class="chotitre">Evolution du taux de chômage dans le temps</h1> 
+        
+
+
+        <div class="chodiv">
+        <div >
+            <p class="chocom ">Nous constatons une baisse puis ensuite une stagnation du taux de chômage. En effet, il est passé de 9,7% en 2012 à 7,8% en 2018 soit une diminution de 1,9 points.</p>
+        </div>
+
+        <div class="chogra" id='CHO1'>
+            <script type="text/javascript" src="js/cho_ann.js"> </script>   
+        </div>
+        </div>
+
+        <h1 class ="chotitre"> Relation entre le taux de chômage et le taux d'insertion au cours du temps  </H1>
+        
+
+
+        <div class="chodiv">    
+        <div>
+            <p class="chocom">Il existe une corrélation négative entre le taux de chômage et le taux d'insertion. Nous constatons que lorsque le taux de chômage augmente, le taux d'insertion baisse, et inversement.</p>
+        </div>
+
+        <div class="chogra" id="CHO2">
+            <script type="text/javascript" src="js/cho_ins.js"> </script>
+        </div>
+    </div>
+
+        <h1 class="chotitre">Relation entre le taux de chômage et le salaire brut annuel moyen au cours du temps</h1> 
+
+        <div class="chodiv">
+        <div>
+            <p class="chocom ">Le taux de chômage maintient une relation négative avec le niveau de salaire. Le graphique illustre que lorsque le taux de chômage est faible, nous observons un salaire élevé et inversement.</p>
+        </div>
+
+        <div class="chogra" id="CHO3">
+            <script type="text/javascript" src="js/cho_sal.js"> </script>
+        </div>
+    </div>
+        
+
+
+<section class="content-section text-white text-center" id="services">
+</section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+         
+            <div class="content-section-heading">
+                <h2 class="mb-5">Contact</h2>
+            </div>
+
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="tel:123456789" target="_blank"><i class="icon-screen-smartphone"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" target="_blank" href="mailto:moi@tel.com"><i class="fa fa-envelope"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://fr-fr.facebook.com/" target="_blank"><i class="icon-social-facebook"></i></a>
+                    </li>
+                     <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/" target="_blank"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="https://www.instagram.com/" target="_blank"><i class="icon-social-instagram"></i></a>
+                    </li>
+                </ul>
+            <p class="text-muted small mb-0">Copyright 2022 &copy; Designed by TANG & RAVELOJAONA</p>
+            </div>
+          
+        </footer>
+
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        
+    </body>
+</html>
